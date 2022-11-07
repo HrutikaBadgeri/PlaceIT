@@ -67,6 +67,13 @@ const CompanySchema = new mongoose.Schema({
     ],
     required: [true],
   },
+
+  lastDateToApply: {
+    type: Date,
+    // min: Date.now(),
+    required: [true, "must provide a deadline for application."],
+  },
+
   resetPasswordToken: String,
   resetPasswordExpire: Date,
 });

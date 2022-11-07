@@ -5,14 +5,12 @@ const ApplicationSchema = new mongoose.Schema({
     type: String,
     trim: true,
     required: [true, "must provide an ID"],
-    unique: true,
     maxlength: [20, "company ID cannot be more than 20 characters"],
   },
   studentID: {
     type: String,
     trim: true,
     required: [true, "must provide an ID"],
-    unique: true,
     maxlength: [20, "studentID cannot be more than 20 characters"],
   },
   studentContact: {
@@ -29,6 +27,11 @@ const ApplicationSchema = new mongoose.Schema({
     trim: true,
     maxLength: [30, "name cannot be more than 30 characters"],
   },
+  studentBranch: {
+    type: String,
+    required: [true, "must provide a branch"],
+    trim: true,
+  },
   studentEmail: {
     type: String,
     required: [true, "must provide an email"],
@@ -40,7 +43,7 @@ const ApplicationSchema = new mongoose.Schema({
       "please fill a valid email address",
     ],
   },
-  AverageCGPA: {
+  averageCGPA: {
     type: Number,
     required: [true, "must provide the average CGPA"],
     trim: true,
@@ -60,13 +63,15 @@ const ApplicationSchema = new mongoose.Schema({
     minleght: [5, "address length should not be less than 5"],
     maxlength: [100, "address length should not be greater than 100"],
   },
-  verifiedApplication: {
-    type: Boolean,
-    default: false,
+  applicationStatus: {
+    type: String,
+    enum: ["Pending", "Accepted", "Rejected"],
+    default: "Pending",
   },
   uploadResume: {
-    type: String,
-    required: [true, "must provide a resume with the applicaiton "],
+    data: Buffer,
+    contentType: String,
+    // required: [true, "must provide a resume with the applicaiton "],
   },
 });
-modules.exports = ApplicationSchema;
+module.exports = mongoose.model("ApplicationSchema", ApplicationSchema);

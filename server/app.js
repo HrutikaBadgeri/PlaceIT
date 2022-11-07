@@ -6,6 +6,7 @@ const colors = require("colors");
 const notFound = require("./middleware/not-found");
 const cookieParser = require("cookie-parser");
 const student = require("./routes/student");
+const application = require("./routes/application");
 require("dotenv").config();
 
 //Cookie parser
@@ -15,6 +16,7 @@ app.use(express.json());
 //Routes
 app.use("/api/v1/company", company);
 app.use("/api/v1/student", student);
+app.use("/api/v1/application", application);
 app.use(notFound);
 
 const start = async () => {
