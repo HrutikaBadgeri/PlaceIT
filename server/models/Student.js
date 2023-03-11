@@ -12,8 +12,15 @@ const StudentSchema = new mongoose.Schema({
     unique: true,
     maxlength: [20, "studentID cannot be more than 20 characters"],
   },
+  studentGender: {
+    type: String,
+    enum: ["Male", "Female", "Others"],
+    trim: true,
+    required: [true, "must mention a gender"],
+  },
   studentPassword: {
     type: String,
+    select: false,
     required: [true, "must provide a password"],
     maxlength: [15, "password cannot be more than 10 characters"],
     minlength: [7, "password cannot be less then 7 characters"],

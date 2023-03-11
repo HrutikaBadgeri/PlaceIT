@@ -13,6 +13,7 @@ const CompanySchema = new mongoose.Schema({
   },
   companyPassword: {
     type: String,
+    select: false,
     required: [true, "must provide a password"],
     maxlength: [15, "password cannot be more than 10 characters"],
     minlength: [7, "password cannot be less then 7 characters"],
@@ -44,6 +45,20 @@ const CompanySchema = new mongoose.Schema({
     type: String,
     required: [true, "must provide a job title"],
     maxlength: [20, "job title cannot be more than 20 characters"],
+  },
+  jobDescription: {
+    type: String,
+    required: [true, "must provide a job description"],
+    maxlength: [1000, "job description cannot be more than 1000 characters"],
+    trim: true,
+  },
+  hiringProcess: {
+    type: String,
+    required: [
+      true,
+      "must provide a detailed explaintion of hiring process in a file(pdf/docx) and post link",
+    ],
+    trim: true,
   },
   packageOffering: {
     type: Number,

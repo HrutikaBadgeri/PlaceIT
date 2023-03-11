@@ -141,7 +141,11 @@ const updateDetails = asyncWrapper(async (req, res, next) => {
     studentEmail,
     studentContact,
     studentBranch,
+    studentGender,
   } = req.body;
+  if (studentGender) {
+    fieldsToUpdate = { ...fieldsToUpdate, studentGender };
+  }
   if (studentID) {
     fieldsToUpdate = { ...fieldsToUpdate, studentID };
   }

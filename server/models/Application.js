@@ -17,7 +17,6 @@ const ApplicationSchema = new mongoose.Schema({
     type: String,
     required: [true],
     trim: true,
-    unique: true,
     maxlength: [10, "phone number cannot be greater than 10 digits"],
     minlength: [10, "phone number cannot be less than 10 digits"],
   },
@@ -36,7 +35,6 @@ const ApplicationSchema = new mongoose.Schema({
     type: String,
     required: [true, "must provide an email"],
     trim: true,
-    unique: true,
     lowercase: true,
     match: [
       /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
@@ -63,7 +61,12 @@ const ApplicationSchema = new mongoose.Schema({
     minleght: [5, "address length should not be less than 5"],
     maxlength: [100, "address length should not be greater than 100"],
   },
-  applicationStatus: {
+  TPOStatus: {
+    type: String,
+    enum: ["Pending", "Accepted", "Rejected"],
+    default: "Pending",
+  },
+  CompanyStatus: {
     type: String,
     enum: ["Pending", "Accepted", "Rejected"],
     default: "Pending",
