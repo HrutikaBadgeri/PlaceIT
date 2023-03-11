@@ -64,13 +64,13 @@ List of available routes:
 ## Environment Variables
 The following environment variables are required:
 
-MONGO_URI: The URI for the MongoDB instance.
-PORT: Express server starts on PORT number.
-JWT_SECRET_KEY: The secret key for JSON Web Tokens.
-JWT_EXPIRE: Number of days after which JWT expires.
-JWT_COOKIE_EXPIRE: Number of days after which JWT Cookie expires.
-FROM_EMAIL: Email from which reset password url is sent.
-SENDGRID_API_KEY: API key to access SENDGRID email system.
+- MONGO_URI: The URI for the MongoDB instance.
+- PORT: Express server starts on PORT number.
+- JWT_SECRET_KEY: The secret key for JSON Web Tokens.
+- JWT_EXPIRE: Number of days after which JWT expires.
+- JWT_COOKIE_EXPIRE: Number of days after which JWT Cookie expires.
+- FROM_EMAIL: Email from which reset password url is sent.
+- SENDGRID_API_KEY: API key to access SENDGRID email system.
 
 
 ## Contributing
