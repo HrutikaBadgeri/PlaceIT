@@ -1,5 +1,5 @@
 # PlaceIT - A college placement backend server 
-This backend server, developed using Node.js, Express.js, and MongoDB, aims to optimize the placement process within a college. Through its RESTful API, it allows students to submit job applications directly via the portal. Moreover, the placement officer can review the applications and select the most suitable candidates to forward to the HR department of the company. This seamless process enhances the efficiency of the placement procedure, promoting transparency, and ensuring timely communication between all parties involved.
+This backend server, developed using Node.js, Express.js, and MongoDB, aims to optimize the placement process within a college. Through its REST API, it allows students to submit job applications directly via the portal. Moreover, the placement officer can review the applications and select the most suitable candidates to forward to the HR department of the company. This seamless process enhances the efficiency of the placement procedure, promoting transparency, and ensuring timely communication between all parties involved.
 
 ## Getting Started
 To get started with this server, follow these steps:
